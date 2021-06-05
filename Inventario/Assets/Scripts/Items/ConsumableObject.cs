@@ -7,4 +7,10 @@ public class ConsumableObject : ItemObject
     {
         type = ItemType.Consumable;
     }
+    public override void itemText(ref string _text)
+    {
+        _text = name + "\n" + type.ToString() + "\n" + "Heals for: " + restoreHealthValue + "\n" +
+                "Weight: " + weight.ToString() + "\n" + "Durability " +
+                durability.ToString();
+    }
 }

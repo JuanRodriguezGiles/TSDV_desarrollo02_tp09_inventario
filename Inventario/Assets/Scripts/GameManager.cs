@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     #region INSTANCE
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     #endregion
     public ItemsContainer items;
     public InventoryObject inventory;
+    public GameObject toolTip;
     int _index;
     void Update()
     {
@@ -27,5 +29,16 @@ public class GameManager : MonoBehaviour
 
         _index = Random.Range(0, items.itemsList.Count);
         inventory.AddItem(items.itemsList[_index], 1);
+    }
+
+    public void ShowTooltip(Vector3 position, string text)
+    {
+        toolTip.SetActive(true);
+        toolTip.transform.position = position;
+        toolTip.GetComponentInChildren<TextMeshProUGUI>().text = text;
+    }
+    public void HideTooltip()
+    {
+        toolTip.SetActive(false);
     }
 }

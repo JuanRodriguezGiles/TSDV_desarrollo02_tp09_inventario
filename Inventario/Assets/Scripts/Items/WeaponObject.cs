@@ -15,4 +15,10 @@ public class WeaponObject : ItemObject
     {
         type = ItemType.Weapon;
     }
+    public override void itemText(ref string _text)
+    {
+        _text = name + "\n" + weaponType.ToString() + " " + type.ToString() + "\n" + "Attack: " + attackValue + "\n" +
+                "Weight: " + weight.ToString() + "\n" + "Durability " +
+                durability.ToString();
+    }
 }
