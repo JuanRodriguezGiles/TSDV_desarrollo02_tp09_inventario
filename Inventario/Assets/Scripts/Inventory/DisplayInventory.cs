@@ -23,6 +23,10 @@ public class DisplayInventory : MonoBehaviour
         for (int i = 0; i < inventory.inventorySlots.Count; i++)
         {
             GameObject go = Instantiate(slotUi, Vector3.zero, Quaternion.identity, transform);
+            go.GetComponent<Image>().sprite = inventory.inventorySlots[i].item.uiImage;
+            inventory.inventorySlots[i].item.itemText(ref go.GetComponent<Tooltip>().tooltipText);
+            go.GetComponentInChildren<TextMeshProUGUI>().text = inventory.inventorySlots[i].amount.ToString();
+            itemsDisplayed.Add(inventory.inventorySlots[i], go);
         }
     }
     void UpdateDisplay()
@@ -43,12 +47,5 @@ public class DisplayInventory : MonoBehaviour
                 itemsDisplayed.Add(inventory.inventorySlots[i], go);
             }
         }
-    }
-    string GetToolTipText(int i)
-    {
-        string text = inventory.inventorySlots[i].item.name + "\n" + inventory.inventorySlots[i].item.type.ToString() +
-                      "\n" + "Weight: " + inventory.inventorySlots[i].item.weight.ToString() + "\n" + "Durability " +
-                      inventory.inventorySlots[i].item.durability.ToString();
-        return text;
     }
 }
