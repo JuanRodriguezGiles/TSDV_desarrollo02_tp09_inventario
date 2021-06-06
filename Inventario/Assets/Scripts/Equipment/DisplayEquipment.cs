@@ -3,6 +3,7 @@ using UnityEngine.UI;
 public class DisplayEquipment : MonoBehaviour
 {
     public EquipmentObject equipment;
+    public Sprite defaultImage;
     void Start()
     {
         CreateDisplay();
@@ -21,6 +22,10 @@ public class DisplayEquipment : MonoBehaviour
                 equipment.equipmentSlots[i].item
                     .ItemText(ref transform.GetChild(i).GetComponent<Tooltip>().tooltipText);
             }
+            else
+            {
+                transform.GetChild(i).GetComponent<Image>().sprite = defaultImage;
+            }
         }
     }
     void UpdateDisplay()
@@ -33,6 +38,15 @@ public class DisplayEquipment : MonoBehaviour
                 equipment.equipmentSlots[i].item
                     .ItemText(ref transform.GetChild(i).GetComponent<Tooltip>().tooltipText);
             }
+            else
+            {
+                transform.GetChild(i).GetComponent<Image>().sprite = defaultImage;
+                transform.GetChild(i).GetComponent<Tooltip>().tooltipText = "";
+            }
         }
+    }
+    public ItemObject GetItem(int _index)
+    {
+        return equipment.equipmentSlots[_index].item;
     }
 }

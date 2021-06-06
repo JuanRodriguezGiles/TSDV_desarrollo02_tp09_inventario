@@ -41,8 +41,18 @@ public class UIManager : MonoBehaviour
     {
         toolTip.SetActive(false);
     }
+    public void AddItem(ItemObject _item)
+    {
+        inventory.AddItem(_item, 1);
+    }
     public void TryEquipItem(ItemObject _item)
     {
-        equipment.TryEquipItem(_item);
+        if (equipment.TryEquipItem(_item))
+            inventory.RemoveItem(_item, 1);
+    }
+    public void UnequipItem(ItemObject _item, int _index)
+    {
+        equipment.UnequipItem(_item, _index);
+        inventory.AddItem(_item, 1);
     }
 }

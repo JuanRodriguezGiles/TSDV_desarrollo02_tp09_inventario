@@ -15,11 +15,16 @@ MonoBehaviour:
   equipmentSlots:
   - item: {fileID: 0}
     equipmentType: 0
+    equipped: 0
   - item: {fileID: 0}
     equipmentType: 1
+    equipped: 0
   - item: {fileID: 0}
     equipmentType: 2
+    equipped: 0
   - item: {fileID: 0}
     equipmentType: 3
+    equipped: 0
   - item: {fileID: 0}
     equipmentType: 4
+    equipped: 0

@@ -18,5 +18,6 @@ MonoBehaviour:
   name: Chest of Awesomeness
   weight: 23
   durability: 70
+  equipSlot: 1
   armorType: 1
   armorValue: 300

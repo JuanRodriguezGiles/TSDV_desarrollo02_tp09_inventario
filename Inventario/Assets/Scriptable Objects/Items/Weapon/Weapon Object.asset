@@ -18,5 +18,6 @@ MonoBehaviour:
   name: Spear of Adonis
   weight: 20
   durability: 40
+  equipSlot: 0
   weaponType: 2
   attackValue: 420

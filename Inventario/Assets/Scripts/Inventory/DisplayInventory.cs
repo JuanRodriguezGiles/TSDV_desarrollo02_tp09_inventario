@@ -35,6 +35,12 @@ public class DisplayInventory : MonoBehaviour
         {
             if (itemsDisplayed.ContainsKey(inventory.inventorySlots[i]))
             {
+                if (inventory.inventorySlots[i].amount == 0)
+                {
+                    itemsDisplayed.Remove(inventory.inventorySlots[i]);
+                    inventory.inventorySlots.RemoveAt(i);
+                    Destroy(transform.GetChild(i).gameObject);
+                }
                 itemsDisplayed[inventory.inventorySlots[i]].GetComponentInChildren<TextMeshProUGUI>().text =
                     inventory.inventorySlots[i].amount.ToString();
             }

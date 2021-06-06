@@ -18,5 +18,6 @@ MonoBehaviour:
   name: Noob Destroyer
   weight: 2
   durability: 2
+  equipSlot: 0
   weaponType: 1
   attackValue: 5

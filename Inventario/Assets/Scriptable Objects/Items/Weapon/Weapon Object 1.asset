@@ -18,5 +18,6 @@ MonoBehaviour:
   name: Cheese Slicer
   weight: 5
   durability: 5
+  equipSlot: 0
   weaponType: 0
   attackValue: 5

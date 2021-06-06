@@ -19,6 +19,15 @@ public class InventoryObject : ScriptableObject
             inventorySlots.Add(new InventorySlot(_item, _amount));
         }
     }
+    public void RemoveItem(ItemObject _item, int _amount)
+    {
+        foreach (InventorySlot slot in inventorySlots)
+        {
+            if (slot.item != _item) continue;
+            slot.AddAmount(-_amount);
+            break;
+        }
+    }
 }
 [System.Serializable]
 public class InventorySlot

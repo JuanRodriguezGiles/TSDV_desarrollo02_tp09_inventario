@@ -18,5 +18,6 @@ MonoBehaviour:
   name: Hands of the Forbidden One
   weight: 6
   durability: 9
+  equipSlot: 2
   armorType: 2
   armorValue: 3000
