@@ -41,8 +41,11 @@ public class DisplayInventory : MonoBehaviour
                     inventory.inventorySlots.RemoveAt(i);
                     Destroy(transform.GetChild(i).gameObject);
                 }
-                itemsDisplayed[inventory.inventorySlots[i]].GetComponentInChildren<TextMeshProUGUI>().text =
-                    inventory.inventorySlots[i].amount.ToString();
+                else
+                {
+                    itemsDisplayed[inventory.inventorySlots[i]].GetComponentInChildren<TextMeshProUGUI>().text =
+                        inventory.inventorySlots[i].amount.ToString();
+                }
             }
             else
             {

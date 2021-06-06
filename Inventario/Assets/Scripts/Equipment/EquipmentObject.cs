@@ -57,12 +57,12 @@ public class EquipmentObject : ScriptableObject
 public class EquipmentSlot
 {
     public ItemObject item;
-    public EquipmentType equipmentType;
+    //public EquipmentType equipmentType;
     public bool equipped;
     public EquipmentSlot(EquipmentType _type)
     {
         item = null;
         equipped = false;
-        equipmentType = _type;
+        //equipmentType = _type;
     }
 }

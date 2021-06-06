@@ -13,7 +13,7 @@ public class ItemObject : ScriptableObject
     public string name;
     public int weight;
     public int durability;
-    public int equipSlot;
+    [HideInInspector] public int equipSlot;
     public virtual void ItemText(ref string _text){}
     public virtual int GetEquipmentSlot(){return 0;}
 }
