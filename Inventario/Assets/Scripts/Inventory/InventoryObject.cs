@@ -4,19 +4,19 @@ using UnityEngine;
 public class InventoryObject : ScriptableObject
 {
     public List<InventorySlot> inventorySlots = new List<InventorySlot>();
-    public void AddItem(ItemObject _item, int amount)
+    public void AddItem(ItemObject _item, int _amount)
     {
         bool hasItem = false;
         foreach (InventorySlot slot in inventorySlots)
         {
             if (slot.item != _item) continue;
-            slot.AddAmount(amount);
+            slot.AddAmount(_amount);
             hasItem = true;
             break;
         }
         if (!hasItem)
         {
-            inventorySlots.Add(new InventorySlot(_item, amount));
+            inventorySlots.Add(new InventorySlot(_item, _amount));
         }
     }
 }

@@ -1,10 +1,10 @@
 ﻿using TMPro;
 using UnityEngine;
-public class GameManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     #region INSTANCE
-    private static GameManager instance;
-    public static GameManager Get()
+    private static UIManager instance;
+    public static UIManager Get()
     {
         return instance;
     }
@@ -21,16 +21,16 @@ public class GameManager : MonoBehaviour
     #endregion
     public ItemsContainer items;
     public InventoryObject inventory;
+    public EquipmentObject equipment;
     public GameObject toolTip;
-    int _index;
+
     void Update()
     {
         if (!Input.GetKeyDown(KeyCode.F)) return;
 
-        _index = Random.Range(0, items.itemsList.Count);
+        int _index = Random.Range(0, items.itemsList.Count);
         inventory.AddItem(items.itemsList[_index], 1);
     }
-
     public void ShowTooltip(Vector3 position, string text)
     {
         toolTip.SetActive(true);
@@ -40,5 +40,9 @@ public class GameManager : MonoBehaviour
     public void HideTooltip()
     {
         toolTip.SetActive(false);
+    }
+    public void TryEquipItem(ItemObject _item)
+    {
+        equipment.TryEquipItem(_item);
     }
 }
